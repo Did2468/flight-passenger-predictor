@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>Flight Traffic predictor</head>
+<body>
+    <div class="container">
+        <h1>Flight Passenger Count Predictor</h1>
+        <form id="prediction-form" action="/" method="post">
+            <div class="form-group">
+                <label for="month">Month:</label>
+                <select id="month" name="month" required>
+                    <option value="" disabled selected>Select a month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="operatingAirline">Operating Airline:</label>
+                <select id="operatingAirline" name="operatingAirline" required>
+        	<option value="" disabled selected>Select an airline</option>
+       		<option value="ATA Airlines">ATA Airlines</option>
+        	<option value="Air Canada ">Air Canada</option>
+        	<option value="Air China">Air China</option>
+        	<option value="Air France">Air France</option>
+        	<option value="Air New Zealand">Air New Zealand</option>
+        	<option value="AirTran Airways">AirTran Airways</option>
+        	<option value="Alaska Airlines">Alaska Airlines</option>
+        	<option value="All Nippon Airways">All Nippon Airways</option>
+        	<option value="American Airlines">American Airlines</option>
+        	<option value="American Eagle Airlines">American Eagle Airlines</option>
+        	<option value="Asiana Airlines">Asiana Airlines</option>
+        	<option value="Atlantic Southeast Airlines">Atlantic Southeast Airlines</option>
+        	<option value="BelAir Airlines">BelAir Airlines</option>
+        	<option value="British Airways">British Airways</option>
+        	<option value="Cathay Pacific">Cathay Pacific</option>
+        	<option value="China Airlines">China Airlines</option>
+        	<option value="Delta Air Lines">Delta Air Lines</option>
+        	<option value="EVA Airways">EVA Airways</option>
+        	<option value="Frontier Airlines">Frontier Airlines</option>
+        	<option value="Hawaiian Airlines">Hawaiian Airlines</option>
+        	<option value="Horizon Air ">Horizon Air</option>
+        	<option value="Icelandair">Icelandair</option>
+        	<option value="Independence Air">Independence Air</option>
+        	<option value="Japan Airlines">Japan Airlines</option>
+        	<option value="KLM Royal Dutch Airlines">KLM Royal Dutch Airlines</option>
+        	<option value="Korean Air Lines">Korean Air Lines</option>
+        	<option value="Lufthansa German Airlines">Lufthansa German Airlines</option>
+        	<option value="Mesa Airlines">Mesa Airlines</option>
+        	<option value="Mexicana Airlines">Mexicana Airlines</option>
+        	<option value="Midwest Airlines">Midwest Airlines</option>
+        	<option value="Northwest Airlines">Northwest Airlines</option>
+        	<option value="Philippine Airlines">Philippine Airlines</option>
+        	<option value="Singapore Airlines">Singapore Airlines</option>
+        	<option value="SkyWest Airlines">SkyWest Airlines</option>
+        	<option value="Sun Country Airlines">Sun Country Airlines</option>
+        	<option value="TACA">TACA</option>
+        	<option value="US Airways">US Airways</option>
+        	<option value="United Airlines">United Airlines</option>
+        	<option value="United Airlines - Pre 07/01/2013">United Airlines - Pre 07/01/2013</option>
+        	<option value="Virgin Atlantic">Virgin Atlantic</option>
+        	<option value="WestJet Airlines">WestJet Airlines</option>
+        	<option value="Boeing Company">Boeing Company</option>
+        	<option value="Miami Air International">Miami Air International</option>
+       		<option value="Air Canada Jazz">Air Canada Jazz</option>
+        	<option value="Qantas Airways">Qantas Airways</option>
+        	<option value="Ameriflight">Ameriflight</option>
+        	<option value="Spirit Airlines">Spirit Airlines</option>
+        	<option value="Xtra Airways">Xtra Airways</option>
+        	<option value="Evergreen International Airlines">Evergreen International Airlines</option>
+        	<option value="Aeromexico">Aeromexico</option>
+        	<option value="JetBlue Airways ">JetBlue Airways</option>
+        	<option value="ExpressJet Airlines">ExpressJet Airlines</option>
+        	<option value="Southwest Airlines">Southwest Airlines</option>
+        	<option value="Virgin America">Virgin America</option>
+        	<option value="Aer Lingus">Aer Lingus</option>
+        	<option value="Allegiant Air">Allegiant Air</option>
+        	<option value="Jet Airways">Jet Airways</option>
+        	<option value="Emirates ">Emirates</option>
+        	<option value="Mesaba Airlines">Mesaba Airlines</option>
+        	<option value="World Airways">World Airways</option>
+        	<option value="Air Berlin">Air Berlin</option>
+        	<option value="Republic Airlines">Republic Airlines</option>
+        	<option value="Servisair">Servisair</option>
+        	<option value="Pacific Aviation">Pacific Aviation</option>
+        	<option value="Swiss International">Swiss International</option>
+        	<option value="LAN Peru">LAN Peru</option>
+        	<option value="Swissport USA">Swissport USA</option>
+        	<option value="XL Airways France">XL Airways France</option>
+        	<option value="China Eastern">China Eastern</option>
+        	<option value="SAS Airlines">SAS Airlines</option>
+        	<option value="Atlas Air, Inc">Atlas Air, Inc</option>
+        	<option value="Compass Airlines">Compass Airlines</option>
+        	<option value="Etihad Airways">Etihad Airways</option>
+        	<option value="China Southern">China Southern</option>
+        	<option value="Turkish Airlines">Turkish Airlines</option>
+        	<option value="COPA Airlines, Inc.">COPA Airlines, Inc.</option>
+        	<option value="Air India Limited">Air India Limited</option>
+    		</select>
+            </div>
+
+            <div class="form-group">
+                <label for="geoSummary">GEO Summary:</label>
+                <select id="geoSummary" name="geoSummary" required>
+                    <option value="" disabled selected>Select GEO summary</option>
+                    <option value="Domestic">Domestic</option>
+                    <option value="International">International</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="geoRegion">GEO Region:</label>
+                <select id="geoRegion" name="geoRegion" required>
+        	<option value="" disabled selected>Select a GEO region</option>
+        	<option value="US">US</option>
+        	<option value="Canada">Canada</option>
+        	<option value="Asia">Asia</option>
+        	<option value="Europe">Europe</option>
+        	<option value="Australia / Oceania">Australia / Oceania</option>
+        	<option value="Mexico">Mexico</option>
+        	<option value="Central America">Central America</option>
+        	<option value="Middle East">Middle East</option>
+        	<option value="South America">South America</option>
+    		</select>
+            </div>
+            
+            <div class="form-group">
+                <label for="activityTypeCode">Activity Type Code:</label>
+                <select id="activityTypeCode" name="activityTypeCode" required>
+                    <option value="" disabled selected>Select activity type</option>
+                    <option value="Deplaned">Deplaned</option>
+                    <option value="Enplaned">Enplaned</option>
+                    <option value="Thru / Transit">Thru / Transit</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="priceCategoryCode">Price Category Code:</label>
+                <select id="priceCategoryCode" name="priceCategoryCode" required>
+                    <option value="" disabled selected>Select price category</option>
+                    <option value="Low Fare">Low Fare</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+	    <div class="form-group">
+	    	<label for="model">Model:</label>
+		<select id="model" name="model" required>
+			<option value="" disables selected>Select Model</option>
+			<option value="XGBoost">XGBoost</option>
+			<option value="Linear">Linear Regression</option>
+			<option value="Polynomial">Polynomial Regression</option>
+			<option value="Random Forest">Random Forest</option>
+			<option value="All">All models</option>
+		</select>
+	    </div>
+
+            <button type="submit">Predict Passenger Count</button>
+        </form>
+	{% if prediction is not none %}
+        <div id="result">
+    		Predicted Count: <span id="result-value">{{ prediction }}</span>
+	</div>
+	{% endif %}
+    </div>
+</body>
+</html>
