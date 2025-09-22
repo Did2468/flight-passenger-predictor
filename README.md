@@ -14,3 +14,5 @@ This is a Flask web application that predicts flight passenger counts based on i
 3. Run the Flask app:
 
 Make sure all required libraries are installed prior.
+
+Note:- No AI tools are used in making this project and its my first project so mind for any ineffeciencies and errors
