@@ -59,7 +59,7 @@ print(f"Trained model saved to {model_filename}")
 print("\n--- Interactive Passenger Count Prediction ---")
 print("Please enter the values for a single flight event.")
 
-# Prompt for user input
+
 month_num = int(input("Enter month (1-12): "))
 op_airline = input("Enter Operating Airline (e.g., 'United Airlines'): ")
 geo_summary = input("Enter GEO Summary (e.g., 'Domestic'): ")
@@ -67,7 +67,7 @@ geo_region = input("Enter GEO Region (e.g., 'US'): ")
 activity_type = input("Enter Activity Type Code (e.g., 'Deplaned'): ")
 price_category = input("Enter Price Category Code (e.g., 'Other'): ")
 
-# Create a DataFrame from the user input
+
 user_input = pd.DataFrame([{
     'Month_num': month_num,
     'Operating Airline': op_airline,
@@ -77,12 +77,12 @@ user_input = pd.DataFrame([{
     'Price Category Code': price_category
 }])
 
-# One-hot encode the user input and ensure it has the same columns as the training data
+
 user_input_encoded = pd.get_dummies(user_input, columns=categorical_cols, drop_first=True)
 user_input_aligned = user_input_encoded.reindex(columns=X_train.columns, fill_value=0)
 
-# Make the prediction
+
 predicted_count = model.predict(user_input_aligned)
 
-# Print the final result
+
 print(f"\nPredicted Adjusted Passenger Count: {int(predicted_count[0])}")
